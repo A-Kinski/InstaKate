@@ -9,11 +9,58 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <WebView 
-            x:Name="webView"
-            HorizontalAlignment="Stretch" 
-            VerticalAlignment="Stretch" 
-            FrameNavigationCompleted="webView_FrameNavigationCompleted" NavigationCompleted="webView_NavigationCompleted"/>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="19*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="96*"/>
+            <RowDefinition Height="123*"/>
+            <RowDefinition Height="372*"/>
+        </Grid.RowDefinitions>
+        <TextBlock 
+           Name="Header"
+           VerticalAlignment="Top"
+           HorizontalAlignment="Center"
+           Text="Введите логин и пароль"
+           FontSize="24" 
+            Grid.ColumnSpan="2"/>
+        <TextBlock
+            Name="loginTextBlock"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Text="Логин"
+            FontSize="24" Grid.Row="1"/>
+        <TextBox 
+            Name="loginTextBox"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Width="300" Grid.Row="1" Grid.Column="1"/>
+        <TextBlock
+            Name="passwordTextBlock"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Text="Пароль"
+            FontSize="24" Grid.Row="2"/>
+        <TextBox 
+            Name="passwordTextBox"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Width="300"  
+            Grid.Row="2"
+            Grid.Column="1"/>
+        <Button 
+            Name="loginButton"
+            Content="Войти"
+            FontSize="24"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Width="200"
+            Height="100"
+            Tapped="loginButton_Tapped"
+            />
     </Grid>
 </Page>
